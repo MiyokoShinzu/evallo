@@ -4,116 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Custom CSS -->
   <style>
-    body {
-      scroll-behavior: smooth;
-    }
+    body { scroll-behavior: smooth; padding-top: 70px; }
+    section { padding: 80px 0; }
+
     /* Hero Section */
-    .hero-section {
-      background-color: #00171F;
-      color: #fff;
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .hero-section .hero-image img {
-      max-width: 100%;
-      height: auto;
-      opacity: 0.2;
-    }
-    /* Section Padding */
-    section {
-      padding: 80px 0;
-    }
-    /* Navbar Fix */
-    body { padding-top: 70px; }
-    /* Button Hover */
-    .btn-primary:hover {
-      background-color: #00A8E8;
-    }
-    /* Footer */
-    footer {
-      background-color: #003459;
-      color: #fff;
-      padding: 40px 0;
-    }
     .hero {
-  min-height: 100vh;
-  padding: 60px 0;
-}
+      min-height: 100vh;
+      padding: 60px 0;
+    }
+    .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; }
+    .hero-text { font-size: 1.1rem; opacity: 0.85; }
 
-.hero-title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
-}
+    /* Pond Image */
+    .pond-svg { width: 100%; max-width: 420px; height: auto; }
+    @media (max-width: 768px) { .pond-svg { max-width: 300px; } }
 
-.hero-text {
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
+    /* Buttons */
+    .btn-primary:hover { background-color: #00A8E8; }
 
-/* Wiggly Image */
-.wiggle-wrapper {
-  width: 100%;
-  max-width: 420px;
-  margin: auto;
-}
-
-.wiggle-img {
-  width: 100%;
-  animation: wiggle 6s ease-in-out infinite;
-  clip-path: polygon(
-    5% 10%,
-    95% 5%,
-    90% 95%,
-    10% 90%
-  );
-}
-
-/* Animation */
-@keyframes wiggle {
-  0% {
-    clip-path: polygon(5% 10%, 95% 5%, 90% 95%, 10% 90%);
-  }
-  50% {
-    clip-path: polygon(10% 5%, 90% 10%, 95% 90%, 5% 95%);
-  }
-  100% {
-    clip-path: polygon(5% 10%, 95% 5%, 90% 95%, 10% 90%);
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .wiggle-wrapper {
-    max-width: 300px;
-  }
-}.pond-svg {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .pond-svg {
-    max-width: 300px;
-  }
-}
-
-
+    /* Footer */
+    footer { background-color: #003459; color: #fff; padding: 40px 0; }
   </style>
-  
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#">MyWebsite</a>
@@ -133,72 +54,13 @@
   </nav>
 
   <!-- HERO SECTION -->
-<section class="hero d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Text -->
-      <div class="col-lg-6 text-center text-lg-start">
-        <h1 class="hero-title">
-          Build. Code. Create.
-        </h1>
-        <p class="hero-text">
-          Turning ideas into responsive and functional web applications.
-        </p>
-
-        <a href="#projects" class="btn btn-primary mt-3">
-          View My Work
-        </a>
-      </div>
-
-      <!-- Image -->
-      <!-- Image -->
-<div class="col-lg-6 text-center mt-4 mt-lg-0">
-  <svg
-    class="pond-svg"
-    viewBox="0 0 500 500"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <clipPath id="pondClip">
-        <path>
-          <animate
-            attributeName="d"
-            dur="8s"
-            repeatCount="indefinite"
-            values="
-              M60,250 Q80,80 250,70 Q420,80 440,250 Q420,420 250,430 Q80,420 60,250 Z;
-              M80,250 Q100,60 250,90 Q430,100 420,250 Q410,430 250,410 Q90,430 80,250 Z;
-              M60,250 Q80,80 250,70 Q420,80 440,250 Q420,420 250,430 Q80,420 60,250 Z
-            "
-          />
-        </path>
-      </clipPath>
-    </defs>
-
-    <image
-      href="assets/pic.jpg"
-      width="500"
-      height="500"
-      clip-path="url(#pondClip)"
-      preserveAspectRatio="xMidYMid slice"
-    />
-  </svg>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-
+  <?php include 'globals/hero.php'; ?>
 
   <!-- About Section -->
   <section id="about" class="bg-light text-dark">
     <div class="container">
       <h2 class="mb-4 text-center">About Me</h2>
-      <p class="text-center">[Insert a short description about yourself here. For example, your skills, experience, and what you are passionate about.]</p>
-      <!-- Optional image -->
+      <p class="text-center">[Insert a short description about yourself here...]</p>
       <div class="text-center mt-4">
         <img src="./assets/about-placeholder.jpg" alt="About Image" class="img-fluid rounded" style="max-width: 400px;">
       </div>
@@ -214,7 +76,7 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Web Design</h5>
-              <p class="card-text">[Brief description of service 1]</p>
+              <p class="card-text">[Brief description]</p>
             </div>
           </div>
         </div>
@@ -222,7 +84,7 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">UI/UX Design</h5>
-              <p class="card-text">[Brief description of service 2]</p>
+              <p class="card-text">[Brief description]</p>
             </div>
           </div>
         </div>
@@ -230,7 +92,7 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Web Development</h5>
-              <p class="card-text">[Brief description of service 3]</p>
+              <p class="card-text">[Brief description]</p>
             </div>
           </div>
         </div>
@@ -247,8 +109,8 @@
           <div class="card">
             <img src="./assets/project1.jpg" class="card-img-top" alt="Project 1">
             <div class="card-body">
-              <h5 class="card-title">Project Title 1</h5>
-              <p class="card-text">Short description of project 1</p>
+              <h5 class="card-title">Project 1</h5>
+              <p class="card-text">Short description</p>
             </div>
           </div>
         </div>
@@ -256,8 +118,8 @@
           <div class="card">
             <img src="./assets/project2.jpg" class="card-img-top" alt="Project 2">
             <div class="card-body">
-              <h5 class="card-title">Project Title 2</h5>
-              <p class="card-text">Short description of project 2</p>
+              <h5 class="card-title">Project 2</h5>
+              <p class="card-text">Short description</p>
             </div>
           </div>
         </div>
@@ -265,8 +127,8 @@
           <div class="card">
             <img src="./assets/project3.jpg" class="card-img-top" alt="Project 3">
             <div class="card-body">
-              <h5 class="card-title">Project Title 3</h5>
-              <p class="card-text">Short description of project 3</p>
+              <h5 class="card-title">Project 3</h5>
+              <p class="card-text">Short description</p>
             </div>
           </div>
         </div>
@@ -321,5 +183,6 @@
   <!-- Eruda (Mobile Console) -->
   <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>
+
 </body>
 </html>
