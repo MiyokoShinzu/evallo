@@ -7,19 +7,20 @@
       <div class="col-lg-6 hero-image text-center mb-4 mb-lg-0">
         <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- First parallelogram -->
-            <clipPath id="clip1">
-              <polygon points="0,0 220,0 180,500 0,500" />
-            </clipPath>
-            <!-- Second parallelogram with a small gap -->
-            <clipPath id="clip2">
-              <polygon points="230,0 500,0 500,500 200,500" />
-            </clipPath>
+            <!-- ClipPaths for 5 parallelograms -->
+            <clipPath id="clip1"><polygon points="0,0 100,0 90,500 0,500"/></clipPath>
+            <clipPath id="clip2"><polygon points="100.3,0 200.3,0 190.3,500 100.3,500"/></clipPath>
+            <clipPath id="clip3"><polygon points="200.6,0 300.6,0 290.6,500 200.6,500"/></clipPath>
+            <clipPath id="clip4"><polygon points="300.9,0 400.9,0 390.9,500 300.9,500"/></clipPath>
+            <clipPath id="clip5"><polygon points="401.2,0 500,0 500,500 401.2,500"/></clipPath>
           </defs>
 
-          <!-- Two clipped images -->
-          <image href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip1)" preserveAspectRatio="xMidYMid cover"/>
-          <image href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip2)" preserveAspectRatio="xMidYMid cover"/>
+          <!-- 5 images with animation -->
+          <image class="parallelogram" href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip1)" preserveAspectRatio="xMidYMid cover"/>
+          <image class="parallelogram" href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip2)" preserveAspectRatio="xMidYMid cover"/>
+          <image class="parallelogram" href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip3)" preserveAspectRatio="xMidYMid cover"/>
+          <image class="parallelogram" href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip4)" preserveAspectRatio="xMidYMid cover"/>
+          <image class="parallelogram" href="assets/pic.jpg" width="500" height="500" clip-path="url(#clip5)" preserveAspectRatio="xMidYMid cover"/>
         </svg>
       </div>
 
@@ -39,6 +40,8 @@
 .hero {
   min-height: 90vh;
   padding: 60px 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero-text h1 {
@@ -65,6 +68,25 @@
   width: 100%;
   max-width: 500px;
   height: auto;
+}
+
+/* Animate the parallelograms alternately */
+.parallelogram {
+  animation: wiggle 4s ease-in-out infinite alternate;
+}
+
+.parallelogram:nth-child(odd) {
+  animation-delay: 0s;
+}
+
+.parallelogram:nth-child(even) {
+  animation-delay: 2s; /* alternate start */
+}
+
+@keyframes wiggle {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); } /* move up */
+  100% { transform: translateY(0px); }
 }
 
 @media (max-width: 768px) {
