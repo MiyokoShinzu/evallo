@@ -4,23 +4,23 @@
 <head>
 
     <!-- BASIC SEO -->
-    <title>Computer Engineer | Web & Embedded Systems Developer</title>
+    <title>Evallo, Karl Stephen</title>
     <meta name="description" content="Computer Engineer specializing in Web Development, Embedded Systems, IoT, Arduino, ESP32, STM32, PHP, and MySQL.">
     <meta name="keywords" content="Computer Engineer, Web Developer, Embedded Systems, IoT, Arduino, ESP32, STM32, PHP, MySQL">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Karl Stephen Evallo">
     <meta name="robots" content="index, follow">
 
     <!-- MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- OPEN GRAPH (SOCIAL SEO) -->
-    <meta property="og:title" content="Computer Engineer | Web & Embedded Systems Developer">
+    <meta property="og:title" content="Evallo, Karl Stephen">
     <meta property="og:description" content="Professional portfolio showcasing web systems, embedded projects, and IoT solutions.">
     <meta property="og:image" content="assets/img/profile.jpg">
     <meta property="og:type" content="website">
 
     <!-- CANONICAL -->
-    <link rel="canonical" href="https://yourdomain.com/">
+    <link rel="canonical" href="https://evallo.ets-dev.com/">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
