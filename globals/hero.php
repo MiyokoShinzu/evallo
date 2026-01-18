@@ -1,124 +1,332 @@
-<!-- hero.php -->
-<section class="hero d-flex align-items-center bg-white">
-  <div class="container">
-    <div class="row align-items-center">
+<header id="hero" class="container-fluid py-5 position-relative overflow-hidden">
 
-      <!-- Image Column (Left) -->
-      <div class="col-lg-6 hero-image text-center mb-4 mb-lg-0">
-        <div class="image-wrapper position-relative">
-          <!-- Base Image -->
-          <img src="assets/pic.jpg" alt="Hero Image" class="img-fluid">
+  <div class="row align-items-center gy-4 hero-content">
 
-          <!-- Animated Parallelogram Overlays -->
-          <div class="parallelogram overlay1"></div>
-          <div class="parallelogram overlay2"></div>
-          <div class="parallelogram overlay3"></div>
-          <div class="parallelogram overlay4"></div>
-          <div class="parallelogram overlay5"></div>
-        </div>
-      </div>
-
-      <!-- Text Column (Right) -->
-      <div class="col-lg-6 hero-text text-lg-start text-center">
-        <h1 style="color: #007EA7;">Build. Code. Create.</h1>
-        <p style="color: #333;">Turning ideas into responsive and functional web experiences.</p>
-        <a href="#portfolio" class="btn btn-primary mt-3">View My Work</a>
-      </div>
-
+    <!-- Profile Image -->
+    <div class="col-lg-4 mx-auto d-flex align-items-center justify-content-center my-img-container">
+      <span class="img-accent"></span>
+      <img
+        src="./assets/pic_suit.png"
+        alt="Karl Stephen Evallo - Computer Engineer and Web Developer"
+        class="img-fluid my-img"
+        width="300"
+        height="300">
     </div>
+
+
+    <!-- Hero Text -->
+    <div class="col-lg-8 mx-auto text-center text-lg-start mb-5 mb-lg-0 d-flex  flex-column">
+
+      <!-- MAIN HEADING -->
+      <h1 class="display-5 fw-bold text-dark mb-2">
+        Hi, I’m Karl Stephen Evallo
+      </h1>
+
+      <!-- SUB-HEADING WITH TYPEWRITER -->
+      <h2 class="role-heading mb-3">
+        I'm a
+        <span class="gradient-text" id="typed-text"></span>
+        <span class="cursor">|</span>
+      </h2>
+
+      <p class="fs-3 lead text-dark mt-3">
+        I build scalable web applications and intelligent embedded systems
+        using modern web technologies and microcontrollers.
+      </p>
+
+      <!-- SOCIAL ICONS -->
+      <div class="hero-socials mt-3 mb-4">
+        <a href="https://github.com/miyokoshinzu" target="_blank" aria-label="GitHub">
+          <img src="./assets/socials/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/evallokarlstephen/" target="_blank" aria-label="LinkedIn">
+          <img src="./assets/socials/linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://facebook.com/evkarlstephen" target="_blank" aria-label="Facebook">
+          <img src="./assets/socials/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.youtube.com/@ets-dev" target="_blank" aria-label="YouTube">
+          <img src="./assets/socials/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/evallokarlstephen/" target="_blank" aria-label="Instagram">
+          <img src="./assets/socials/instagram.png" alt="Instagram">
+        </a>
+
+
+        <a href="https://www.tiktok.com/@karlstephy" target="_blank" aria-label="TikTok">
+          <img src="./assets/socials/tiktok.png" alt="TikTok">
+        </a>
+
+
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <img src="./assets/socials/x.png" alt="tiktok" style="border-radius: 4px; ">
+        </a>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <nav class="hero-actions d-flex flex-wrap gap-3">
+        <a href="./assets/Karl_Stephen_Evallo_CV.pdf"
+          class="btn btn-gradient-primary btn-lg"
+          download>
+          Download CV
+        </a>
+        <a href="#contact"
+          class="btn btn-gradient-outline btn-lg">
+          Contact Me
+        </a>
+      </nav>
+    </div>
+
   </div>
-</section>
 
-<style>
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  padding: 60px 0;
-}
+  <!-- ================= INLINE STYLES ================= -->
+  <style>
+    #hero {
+      min-height: 100vh;
+      background: #ffffff;
+      /* KEEP WHITE */
+      position: relative;
+    }
 
-.hero-text h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
-.hero-text p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-}
+    /* MAIN HEADING */
+    #hero h1 {
+      color: #0f172a;
+      /* deep navy */
+    }
 
-.btn-primary {
-  background-color: #007EA7;
-  border: none;
-}
+    /* ROLE HEADING */
+    .role-heading {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #334155;
+      /* slate */
+    }
 
-.btn-primary:hover {
-  background-color: #005f8a;
-}
+    /* DESCRIPTION */
+    #hero p {
+      color: #475569;
+      /* neutral dark */
+    }
 
-/* Image wrapper positioning */
-.image-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 500px;
-}
+    /* Profile Image */
+    .my-img {
+      border: 2px solid #e5e7eb;
+      border-radius: 80% 80% 95% 16%;
+      transition: transform 0.3s ease;
+      background: #fff;
+    }
 
-/* Base image */
-.image-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+    .my-img:hover {
+      transform: translateY(-6px);
+    }
 
-/* Parallelogram overlays */
-.parallelogram {
-  position: absolute;
-  top: 0;
-  left: -120%; /* Start outside left */
-  width: 22%;   /* approximate width for 5 parallelograms with tiny gaps */
-  height: 100%;
-  background-color: rgba(0, 126, 167, 0.3);
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-  transform: translateY(0);
-  animation: slideIn 2s forwards;
-}
+    /* Image pseudo elements (BLUE + PURPLE) */
+    .my-img-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
 
-/* Staggered animation for alternating top/bottom movement */
-.overlay1 { animation-delay: 0s; }
-.overlay2 { animation-delay: 0.3s; transform: translateY(-10px); }
-.overlay3 { animation-delay: 0.6s; }
-.overlay4 { animation-delay: 0.9s; transform: translateY(-10px); }
-.overlay5 { animation-delay: 1.2s; }
+    /* existing blobs */
+    .my-img-container::before,
+    .my-img-container::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.45;
+      z-index: -1;
+    }
 
-/* Animation keyframes */
-@keyframes slideIn {
-  0% {
-    left: -120%;
-    opacity: 0;
-  }
-  100% {
-    left: calc((var(--i) - 1) * 20%); /* final position */
-    opacity: 1;
-  }
-}
+    /* BLUE - top left */
+    .my-img-container::before {
+      width: 180px;
+      height: 180px;
+      background: #0d6efd;
+      top: -20px;
+      left: -20px;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
+    /* PURPLE - bottom right */
+    .my-img-container::after {
+      width: 120px;
+      height: 120px;
+      background: #7c3aed;
+      bottom: -30px;
+      right: -10px;
+    }
 
-  .image-wrapper {
-    max-width: 350px;
-    margin-bottom: 2rem;
-  }
+    /* NAVBAR COLOR - top right */
+    .my-img-container .img-accent {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #0f172a;
+      /* navbar color */
+      border-radius: 50%;
+      bottom: -8px;
+      /* move to bottom */
+      left: -3px;
+      /* move to left */
+      opacity: 0.8;
+      z-index: -1;
+      /* stays behind the image */
+    }
 
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-}
-</style>
+
+    /* Gradient typed role */
+    .gradient-text {
+      background: linear-gradient(90deg, #0d6efd, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    /* Gradient cursor */
+    .cursor {
+      display: inline-block;
+      margin-left: 4px;
+      background: linear-gradient(90deg, #0d6efd, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: blink 1s steps(2) infinite;
+      font-weight: 700;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Social Icons */
+    .hero-socials {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-socials img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .hero-socials a:hover img {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 6px rgba(124, 58, 237, 0.5));
+    }
+
+    /* Buttons */
+    .btn-gradient-primary {
+      background: linear-gradient(135deg, #0d6efd, #7c3aed);
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-gradient-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-gradient-outline {
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      color: #0d6efd;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      background-image:
+        linear-gradient(#ffffff, #ffffff),
+        linear-gradient(135deg, #0d6efd, #7c3aed);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-gradient-outline:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+      color: #0d6efd;
+    }
+
+    /* ================= RESPONSIVE ALIGNMENT ================= */
+    .hero-socials,
+    .hero-actions {
+      justify-content: center;
+    }
+
+    @media (min-width: 992px) {
+
+      .hero-socials,
+      .hero-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-content .col-lg-8 {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .role-heading {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+
+
+  <!-- ================= INLINE SCRIPT ================= -->
+  <script>
+    (() => {
+      const roles = [
+        "Computer Engineer",
+        "Web Developer",
+        "Microcontroller Programmer"
+      ];
+
+      const el = document.getElementById("typed-text");
+
+      let roleIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function typeRole() {
+        const currentRole = roles[roleIndex];
+
+        if (!deleting) {
+          el.textContent = currentRole.slice(0, charIndex + 1);
+          charIndex++;
+
+          if (charIndex === currentRole.length) {
+            setTimeout(() => deleting = true, 1200);
+          }
+        } else {
+          el.textContent = currentRole.slice(0, charIndex - 1);
+          charIndex--;
+
+          if (charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+          }
+        }
+
+        setTimeout(typeRole, deleting ? 60 : 100);
+      }
+
+      typeRole();
+    })();
+  </script>
+
+</header>
